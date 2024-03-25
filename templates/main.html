@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="/static/style.css" rel="stylesheet" type="text/css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div class="fulldiv">
+    <div class="backingDiv">
+    <div class="titleDiv">
+      <h1 class="title">GPACALC</h1>
+      <h2 class="subtitle">GPA Calculator</h2>
+    </div>
+  </div>
+  <h3 id="welcome" class="welcome">Welcome</h3>
+  <h3 id="dateTime" class="dateTime"></h3>
+  <hr>
+  <div class="tableDiv">
+    <table id="courses">
+      <tr>
+        <th>Subject</th>
+        <th>Type of Class</th>
+        <th>Numerical Grade</th>
+        <th>Length</th>
+      </tr>
+      <tr class="clone">
+        <td><input type="text"></td>
+        <td>
+          <select>
+            <option value="basic">Select Option</option>
+            <option value="cp">CP</option>
+            <option value="honors">Honors</option>
+            <option value="ap">AP</option>
+            <option value="none">None</option>
+          </select>
+        </td>
+        <td><input type="text" onchange=""></td>
+        <td>
+          <select>
+            <option value="0">Select Option</option>
+            <option value="2.5">Semester</option>
+            <option value="5">Full-year</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="buttons">
+    <button onClick="addCourse('', 'basic', '', '0')">Add Course</button>
+    <button onClick="calcWeighted()">Calculate Weighted</button>
+    <button onClick="calcUnweighted()">Calculate Unweighted</button>
+    <button onClick="saveCourses()">Save Courses</button>
+  </div>
+  <h3 id="gpaDisplay" class="gpaDisplay">Your weighted GPA is: </h3>
+  <img id="laughing" src="https://t4.ftcdn.net/jpg/01/35/16/73/360_F_135167384_ys3lqe6SeznzLcQ2kygNKYon7969PbYE.jpg">
+  <img id="laughing1" src="https://i.pinimg.com/originals/fc/ce/58/fcce5834a3b86b27ad496a81eea2b7b2.png">
+  <script src="/static/script.js"></script>
+  <script type="text/javascript">
+    window.onload = function(){
+      welcome({{usern|tojson}});
+      loadclasses({{classesfetched|tojson}})
+    }
+  </script>
+</body>
+
+</html>
